@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    char data;
+    struct Node *left, *right;
+};
+
+struct Node* createNode(char data) {
+    struct Node* n = malloc(sizeof(struct Node));
+    n->data = data;
+    n->left = n->right = NULL;
+    return n;
+}
+
+int main() {
+    struct Node *root, *a, *b;
+
+    root = createNode('+');
+    a = createNode('a');
+    b = createNode('b');
+
+    root->left = a;
+    root->right = b;
+
+    printf("Parse Tree for a+b:\n");
+    printf("    %c\n", root->data);
+    printf("   / \\\n");
+    printf("  %c   %c\n", a->data, b->data);
+
+    return 0;
+}
