@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10, b;
+
+    // Strength reduction
+    b = a * 2;
+    printf("Strength Reduction: %d\n", b);
+
+    // Dead code elimination
+    // Unused statement: int x = 100;
+
+    // Frequency reduction
+    int i, sum = 0;
+    for (i = 0; i < 3; i++)
+        sum += 5;
+
+    printf("Frequency Reduction: %d\n", sum);
+
+    return 0;
+}
