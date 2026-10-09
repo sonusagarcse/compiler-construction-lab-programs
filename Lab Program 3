@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main() {
+    char s[200];
+    int i = 0;
+
+    printf("Enter C statement: ");
+    fgets(s, sizeof(s), stdin);
+
+    while (s[i]) {
+        if (isspace(s[i])) {
+            i++;
+        }
+        else if (isalpha(s[i]) || s[i] == '_') {
+            char w[50];
+            int j = 0;
+
+            while (isalnum(s[i]) || s[i] == '_')
+                w[j++] = s[i++];
+            w[j] = '\0';
+
+            if (!strcmp(w, "int") || !strcmp(w, "if") ||
+                !strcmp(w, "else") || !strcmp(w, "while") ||
+                !strcmp(w, "return"))
+                printf("%s -> KEYWORD\n", w);
+            else
+                printf("%s -> IDENTIFIER\n", w);
+        }
+        else if (isdigit(s[i])) {
+            printf("%c -> CONSTANT\n", s[i++]);
+        }
+        else if (strchr("+-*/%=<>!", s[i])) {
+            printf("%c -> OPERATOR\n", s[i++]);
+        }
+        else {
+            printf("%c -> SPECIAL SYMBOL\n", s[i++]);
+        }
+    }
+
+    return 0;
+}
