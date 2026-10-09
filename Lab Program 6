@@ -1,0 +1,60 @@
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int choice;
+
+    printf("===== SIMPLE LANGUAGE COMPILER =====\n");
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    printf("\n--- Arithmetic Operators ---\n");
+    printf("Addition (+) = %d\n", a + b);
+    printf("Subtraction (-) = %d\n", a - b);
+    printf("Multiplication (*) = %d\n", a * b);
+
+    if (b != 0) {
+        printf("Division (/) = %d\n", a / b);
+        printf("Modulus (%%) = %d\n", a % b);
+    } else {
+        printf("Division and modulus by zero are undefined.\n");
+    }
+
+    printf("\n--- Relational Operators ---\n");
+    printf("a == b : %d\n", a == b);
+    printf("a != b : %d\n", a != b);
+    printf("a > b  : %d\n", a > b);
+    printf("a < b  : %d\n", a < b);
+    printf("a >= b : %d\n", a >= b);
+    printf("a <= b : %d\n", a <= b);
+
+    printf("\n--- Logical Operators ---\n");
+    printf("(a > 0 && b > 0) = %d\n",
+           a > 0 && b > 0);
+    printf("(a > 0 || b > 0) = %d\n",
+           a > 0 || b > 0);
+    printf("!(a > 0) = %d\n", !(a > 0));
+
+    printf("\n--- Conditional Statement ---\n");
+    if (a > b) {
+        printf("%d is greater than %d\n", a, b);
+    } else if (a < b) {
+        printf("%d is less than %d\n", a, b);
+    } else {
+        printf("Both numbers are equal.\n");
+    }
+
+    printf("\n--- Increment and Decrement ---\n");
+    printf("Original a = %d\n", a);
+    printf("Pre-increment ++a = %d\n", ++a);
+    printf("Pre-decrement --b = %d\n", --b);
+
+    printf("\nProgram executed successfully.\n");
+
+    return 0;
+}
